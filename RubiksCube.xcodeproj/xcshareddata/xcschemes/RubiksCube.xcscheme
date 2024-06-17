@@ -29,11 +29,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:RubiksCube.xctestplan"
-            default = "YES">
+            reference = "container:RubiksCube.xctestplan">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:RubiksCube/TestPlan.xctestplan">
+            reference = "container:RubiksCube/TestPlan.xctestplan"
+            default = "YES">
          </TestPlanReference>
       </TestPlans>
       <Testables>
