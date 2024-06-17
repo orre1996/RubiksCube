@@ -62,7 +62,7 @@
 		9F62F0E32C1E5017001AD674 /* FlatCubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatCubeView.swift; sourceTree = "<group>"; };
 		9F62F0E62C1E5290001AD674 /* TopFaceTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFaceTile.swift; sourceTree = "<group>"; };
 		9F62F0E82C1E529C001AD674 /* RightFaceTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightFaceTile.swift; sourceTree = "<group>"; };
-		9FBB00782C205DF70003D3DB /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; name = TestPlan.xctestplan; path = RubiksCube/TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
+		9FBB00782C205DF70003D3DB /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = TestPlan.xctestplan; path = RubiksCube/TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +104,7 @@
 		9F62F0932C1CA1EE001AD674 /* RubiksCube */ = {
 			isa = PBXGroup;
 			children = (
+				9FBB00782C205DF70003D3DB /* TestPlan.xctestplan */,
 				9F62F0E52C1E5284001AD674 /* Shapes */,
 				9F62F0D72C1CBEE2001AD674 /* Elements */,
 				9F62F0C82C1CA87F001AD674 /* Components */,
@@ -138,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				9F62F0D92C1CBF1E001AD674 /* RubiksCubeViewModel.swift */,
-				9FBB00782C205DF70003D3DB /* TestPlan.xctestplan */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
