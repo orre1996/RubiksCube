@@ -23,9 +23,9 @@ extension Array {
         for i in 0..<count {
             for j in 0..<count {
                 if clockwise {
-                    rotated[count-1-j][i] = self[i][j]
-                } else {
                     rotated[j][count-1-i] = self[i][j]
+                } else {
+                    rotated[count-1-j][i] = self[i][j]
                 }
             }
         }
