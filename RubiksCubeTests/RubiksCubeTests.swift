@@ -68,9 +68,9 @@ final class RubiksCubeTests: XCTestCase {
         viewModel.rotateFace(direction: .clockwise)
         cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.green)
-        XCTAssertEqual(cube[.front]?[2][1], TileColor.green)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.green)
+        XCTAssertEqual(cube[.front]?[2][0], TileColor.blue)
+        XCTAssertEqual(cube[.front]?[2][1], TileColor.blue)
+        XCTAssertEqual(cube[.front]?[2][2], TileColor.blue)
 
         viewModel.rotateFace(direction: .clockwise)
         cube = viewModel.cube
@@ -91,9 +91,9 @@ final class RubiksCubeTests: XCTestCase {
         viewModel.rotateFace(direction: .counterClockwise)
         cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.front]?[2][1], TileColor.blue)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.blue)
+        XCTAssertEqual(cube[.front]?[2][0], TileColor.green)
+        XCTAssertEqual(cube[.front]?[2][1], TileColor.green)
+        XCTAssertEqual(cube[.front]?[2][2], TileColor.green)
 
         viewModel.rotateFace(direction: .counterClockwise)
         cube = viewModel.cube
@@ -252,9 +252,9 @@ final class RubiksCubeTests: XCTestCase {
         viewModel.rotateFace(direction: .clockwise)
         cube = viewModel.cube
 
-        XCTAssertEqual(cube[.top]?[0][0], TileColor.blue)
-        XCTAssertEqual(cube[.top]?[0][1], TileColor.blue)
-        XCTAssertEqual(cube[.top]?[0][2], TileColor.blue)
+        XCTAssertEqual(cube[.top]?[0][0], TileColor.green)
+        XCTAssertEqual(cube[.top]?[0][1], TileColor.green)
+        XCTAssertEqual(cube[.top]?[0][2], TileColor.green)
 
         viewModel.rotateFace(direction: .clockwise)
         cube = viewModel.cube
@@ -275,9 +275,9 @@ final class RubiksCubeTests: XCTestCase {
         viewModel.rotateFace(direction: .counterClockwise)
         cube = viewModel.cube
 
-        XCTAssertEqual(cube[.top]?[0][0], TileColor.green)
-        XCTAssertEqual(cube[.top]?[0][1], TileColor.green)
-        XCTAssertEqual(cube[.top]?[0][2], TileColor.green)
+        XCTAssertEqual(cube[.top]?[0][0], TileColor.blue)
+        XCTAssertEqual(cube[.top]?[0][1], TileColor.blue)
+        XCTAssertEqual(cube[.top]?[0][2], TileColor.blue)
 
         viewModel.rotateFace(direction: .counterClockwise)
         cube = viewModel.cube
