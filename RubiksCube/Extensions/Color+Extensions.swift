@@ -11,7 +11,7 @@ extension Color {
     // Button colors
     static let primaryButtonForegroundColor = Color.white
     static let primaryButtonBackgroundColor = Color(red: 154/255, green: 91/255, blue: 7/255)
-    
+
     // Cube colors
     static let primaryRed = Color.red
     static let primaryOrange = Color.orange

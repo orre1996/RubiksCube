@@ -163,9 +163,8 @@
 		9F62F0C82C1CA87F001AD674 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9FBB00772C1FD6B70003D3DB /* Cubes */,
 				9F62F0D42C1CBD92001AD674 /* HUD */,
-				9F62F0E12C1E4FE0001AD674 /* IsometricCubeView.swift */,
-				9F62F0E32C1E5017001AD674 /* FlatCubeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -204,6 +203,15 @@
 				9F62F0E82C1E529C001AD674 /* RightFaceTile.swift */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		9FBB00772C1FD6B70003D3DB /* Cubes */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0E12C1E4FE0001AD674 /* IsometricCubeView.swift */,
+				9F62F0E32C1E5017001AD674 /* FlatCubeView.swift */,
+			);
+			path = Cubes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
