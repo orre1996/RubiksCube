@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "4F34B7C3-32AE-49A0-9F2E-0D961F3BDDBF",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RubiksCube.xcodeproj",
+        "identifier" : "9F62F0A02C1CA1F0001AD674",
+        "name" : "RubiksCubeTests"
+      }
+    }
+  ],
+  "version" : 1
+}
