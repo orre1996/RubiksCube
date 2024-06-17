@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F13997A2C1F2C7F00E4BB85 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1399792C1F2C7F00E4BB85 /* Array+Extensions.swift */; };
+		9F62F0952C1CA1EE001AD674 /* RubiksCubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0942C1CA1EE001AD674 /* RubiksCubeApp.swift */; };
+		9F62F0972C1CA1EE001AD674 /* RubiksCubeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0962C1CA1EE001AD674 /* RubiksCubeScreen.swift */; };
+		9F62F0992C1CA1F0001AD674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F62F0982C1CA1F0001AD674 /* Assets.xcassets */; };
+		9F62F0A62C1CA1F0001AD674 /* RubiksCubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0A52C1CA1F0001AD674 /* RubiksCubeTests.swift */; };
+		9F62F0C32C1CA5F4001AD674 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0C22C1CA5F4001AD674 /* Image+Extensions.swift */; };
+		9F62F0C52C1CA71B001AD674 /* CubeTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0C42C1CA71B001AD674 /* CubeTile.swift */; };
+		9F62F0C72C1CA796001AD674 /* CubeFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0C62C1CA796001AD674 /* CubeFace.swift */; };
+		9F62F0CA2C1CA8AE001AD674 /* FaceButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0C92C1CA8AE001AD674 /* FaceButtons.swift */; };
+		9F62F0CC2C1CADD2001AD674 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0CB2C1CADD2001AD674 /* Color+Extensions.swift */; };
+		9F62F0CE2C1CBA85001AD674 /* CubeRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0CD2C1CBA85001AD674 /* CubeRotation.swift */; };
+		9F62F0D02C1CBAE3001AD674 /* RotationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0CF2C1CBAE3001AD674 /* RotationButtons.swift */; };
+		9F62F0D22C1CBBBE001AD674 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0D12C1CBBBE001AD674 /* PrimaryButton.swift */; };
+		9F62F0D62C1CBDEC001AD674 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0D52C1CBDEC001AD674 /* ToggleButton.swift */; };
+		9F62F0DA2C1CBF1E001AD674 /* RubiksCubeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0D92C1CBF1E001AD674 /* RubiksCubeViewModel.swift */; };
+		9F62F0E02C1CE01C001AD674 /* CubeActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0DF2C1CE01C001AD674 /* CubeActionButtons.swift */; };
+		9F62F0E22C1E4FE0001AD674 /* IsometricCubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0E12C1E4FE0001AD674 /* IsometricCubeView.swift */; };
+		9F62F0E42C1E5017001AD674 /* FlatCubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0E32C1E5017001AD674 /* FlatCubeView.swift */; };
+		9F62F0E72C1E5290001AD674 /* TopFaceTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0E62C1E5290001AD674 /* TopFaceTile.swift */; };
+		9F62F0E92C1E529C001AD674 /* RightFaceTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62F0E82C1E529C001AD674 /* RightFaceTile.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F62F0A22C1CA1F0001AD674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F62F0892C1CA1EE001AD674 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F62F0902C1CA1EE001AD674;
+			remoteInfo = RubiksCube;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9F1399792C1F2C7F00E4BB85 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		9F62F0912C1CA1EE001AD674 /* RubiksCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiksCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F62F0942C1CA1EE001AD674 /* RubiksCubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeApp.swift; sourceTree = "<group>"; };
+		9F62F0962C1CA1EE001AD674 /* RubiksCubeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeScreen.swift; sourceTree = "<group>"; };
+		9F62F0982C1CA1F0001AD674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F62F0A12C1CA1F0001AD674 /* RubiksCubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiksCubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F62F0A52C1CA1F0001AD674 /* RubiksCubeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeTests.swift; sourceTree = "<group>"; };
+		9F62F0C22C1CA5F4001AD674 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		9F62F0C42C1CA71B001AD674 /* CubeTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTile.swift; sourceTree = "<group>"; };
+		9F62F0C62C1CA796001AD674 /* CubeFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeFace.swift; sourceTree = "<group>"; };
+		9F62F0C92C1CA8AE001AD674 /* FaceButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceButtons.swift; sourceTree = "<group>"; };
+		9F62F0CB2C1CADD2001AD674 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		9F62F0CD2C1CBA85001AD674 /* CubeRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeRotation.swift; sourceTree = "<group>"; };
+		9F62F0CF2C1CBAE3001AD674 /* RotationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationButtons.swift; sourceTree = "<group>"; };
+		9F62F0D12C1CBBBE001AD674 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		9F62F0D52C1CBDEC001AD674 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		9F62F0D92C1CBF1E001AD674 /* RubiksCubeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiksCubeViewModel.swift; sourceTree = "<group>"; };
+		9F62F0DF2C1CE01C001AD674 /* CubeActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeActionButtons.swift; sourceTree = "<group>"; };
+		9F62F0E12C1E4FE0001AD674 /* IsometricCubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsometricCubeView.swift; sourceTree = "<group>"; };
+		9F62F0E32C1E5017001AD674 /* FlatCubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatCubeView.swift; sourceTree = "<group>"; };
+		9F62F0E62C1E5290001AD674 /* TopFaceTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFaceTile.swift; sourceTree = "<group>"; };
+		9F62F0E82C1E529C001AD674 /* RightFaceTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightFaceTile.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F62F08E2C1CA1EE001AD674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F62F09E2C1CA1F0001AD674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F62F0882C1CA1EE001AD674 = {
+			isa = PBXGroup;
+			children = (
+				9F62F0932C1CA1EE001AD674 /* RubiksCube */,
+				9F62F0A42C1CA1F0001AD674 /* RubiksCubeTests */,
+				9F62F0922C1CA1EE001AD674 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F62F0922C1CA1EE001AD674 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0912C1CA1EE001AD674 /* RubiksCube.app */,
+				9F62F0A12C1CA1F0001AD674 /* RubiksCubeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F62F0932C1CA1EE001AD674 /* RubiksCube */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0E52C1E5284001AD674 /* Shapes */,
+				9F62F0D72C1CBEE2001AD674 /* Elements */,
+				9F62F0C82C1CA87F001AD674 /* Components */,
+				9F62F0C12C1CA202001AD674 /* Extensions */,
+				9F62F0C02C1CA1FE001AD674 /* Screens */,
+				9F62F0BF2C1CA1FA001AD674 /* ViewModels */,
+				9F62F0BE2C1CA1F6001AD674 /* Enums */,
+				9F62F0982C1CA1F0001AD674 /* Assets.xcassets */,
+			);
+			path = RubiksCube;
+			sourceTree = "<group>";
+		};
+		9F62F0A42C1CA1F0001AD674 /* RubiksCubeTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0A52C1CA1F0001AD674 /* RubiksCubeTests.swift */,
+			);
+			path = RubiksCubeTests;
+			sourceTree = "<group>";
+		};
+		9F62F0BE2C1CA1F6001AD674 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0C42C1CA71B001AD674 /* CubeTile.swift */,
+				9F62F0C62C1CA796001AD674 /* CubeFace.swift */,
+				9F62F0CD2C1CBA85001AD674 /* CubeRotation.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		9F62F0BF2C1CA1FA001AD674 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0D92C1CBF1E001AD674 /* RubiksCubeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9F62F0C02C1CA1FE001AD674 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0942C1CA1EE001AD674 /* RubiksCubeApp.swift */,
+				9F62F0962C1CA1EE001AD674 /* RubiksCubeScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9F62F0C12C1CA202001AD674 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0C22C1CA5F4001AD674 /* Image+Extensions.swift */,
+				9F62F0CB2C1CADD2001AD674 /* Color+Extensions.swift */,
+				9F1399792C1F2C7F00E4BB85 /* Array+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9F62F0C82C1CA87F001AD674 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0D42C1CBD92001AD674 /* HUD */,
+				9F62F0E12C1E4FE0001AD674 /* IsometricCubeView.swift */,
+				9F62F0E32C1E5017001AD674 /* FlatCubeView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9F62F0D42C1CBD92001AD674 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0C92C1CA8AE001AD674 /* FaceButtons.swift */,
+				9F62F0CF2C1CBAE3001AD674 /* RotationButtons.swift */,
+				9F62F0DF2C1CE01C001AD674 /* CubeActionButtons.swift */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		9F62F0D72C1CBEE2001AD674 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0D82C1CBEEE001AD674 /* Buttons */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		9F62F0D82C1CBEEE001AD674 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0D12C1CBBBE001AD674 /* PrimaryButton.swift */,
+				9F62F0D52C1CBDEC001AD674 /* ToggleButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		9F62F0E52C1E5284001AD674 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F0E62C1E5290001AD674 /* TopFaceTile.swift */,
+				9F62F0E82C1E529C001AD674 /* RightFaceTile.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F62F0902C1CA1EE001AD674 /* RubiksCube */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F62F0B52C1CA1F0001AD674 /* Build configuration list for PBXNativeTarget "RubiksCube" */;
+			buildPhases = (
+				9F62F08D2C1CA1EE001AD674 /* Sources */,
+				9F62F08E2C1CA1EE001AD674 /* Frameworks */,
+				9F62F08F2C1CA1EE001AD674 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RubiksCube;
+			productName = RubiksCube;
+			productReference = 9F62F0912C1CA1EE001AD674 /* RubiksCube.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F62F0A02C1CA1F0001AD674 /* RubiksCubeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F62F0B82C1CA1F0001AD674 /* Build configuration list for PBXNativeTarget "RubiksCubeTests" */;
+			buildPhases = (
+				9F62F09D2C1CA1F0001AD674 /* Sources */,
+				9F62F09E2C1CA1F0001AD674 /* Frameworks */,
+				9F62F09F2C1CA1F0001AD674 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F62F0A32C1CA1F0001AD674 /* PBXTargetDependency */,
+			);
+			name = RubiksCubeTests;
+			productName = RubiksCubeTests;
+			productReference = 9F62F0A12C1CA1F0001AD674 /* RubiksCubeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F62F0892C1CA1EE001AD674 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					9F62F0902C1CA1EE001AD674 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					9F62F0A02C1CA1F0001AD674 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 9F62F0902C1CA1EE001AD674;
+					};
+				};
+			};
+			buildConfigurationList = 9F62F08C2C1CA1EE001AD674 /* Build configuration list for PBXProject "RubiksCube" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F62F0882C1CA1EE001AD674;
+			productRefGroup = 9F62F0922C1CA1EE001AD674 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F62F0902C1CA1EE001AD674 /* RubiksCube */,
+				9F62F0A02C1CA1F0001AD674 /* RubiksCubeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F62F08F2C1CA1EE001AD674 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F62F0992C1CA1F0001AD674 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F62F09F2C1CA1F0001AD674 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F62F08D2C1CA1EE001AD674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F62F0C32C1CA5F4001AD674 /* Image+Extensions.swift in Sources */,
+				9F62F0D02C1CBAE3001AD674 /* RotationButtons.swift in Sources */,
+				9F62F0D22C1CBBBE001AD674 /* PrimaryButton.swift in Sources */,
+				9F62F0E22C1E4FE0001AD674 /* IsometricCubeView.swift in Sources */,
+				9F62F0C72C1CA796001AD674 /* CubeFace.swift in Sources */,
+				9F62F0CA2C1CA8AE001AD674 /* FaceButtons.swift in Sources */,
+				9F62F0972C1CA1EE001AD674 /* RubiksCubeScreen.swift in Sources */,
+				9F62F0E92C1E529C001AD674 /* RightFaceTile.swift in Sources */,
+				9F62F0CE2C1CBA85001AD674 /* CubeRotation.swift in Sources */,
+				9F62F0CC2C1CADD2001AD674 /* Color+Extensions.swift in Sources */,
+				9F62F0D62C1CBDEC001AD674 /* ToggleButton.swift in Sources */,
+				9F62F0C52C1CA71B001AD674 /* CubeTile.swift in Sources */,
+				9F62F0E02C1CE01C001AD674 /* CubeActionButtons.swift in Sources */,
+				9F62F0E72C1E5290001AD674 /* TopFaceTile.swift in Sources */,
+				9F62F0952C1CA1EE001AD674 /* RubiksCubeApp.swift in Sources */,
+				9F62F0E42C1E5017001AD674 /* FlatCubeView.swift in Sources */,
+				9F13997A2C1F2C7F00E4BB85 /* Array+Extensions.swift in Sources */,
+				9F62F0DA2C1CBF1E001AD674 /* RubiksCubeViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F62F09D2C1CA1F0001AD674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F62F0A62C1CA1F0001AD674 /* RubiksCubeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F62F0A32C1CA1F0001AD674 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F62F0902C1CA1EE001AD674 /* RubiksCube */;
+			targetProxy = 9F62F0A22C1CA1F0001AD674 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9F62F0B32C1CA1F0001AD674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9F62F0B42C1CA1F0001AD674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F62F0B62C1CA1F0001AD674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = WZ85A999ZX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cube.RubiksCube;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F62F0B72C1CA1F0001AD674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = WZ85A999ZX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cube.RubiksCube;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9F62F0B92C1CA1F0001AD674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ85A999ZX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cube.RubiksCubeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RubiksCube.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RubiksCube";
+			};
+			name = Debug;
+		};
+		9F62F0BA2C1CA1F0001AD674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ85A999ZX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cube.RubiksCubeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RubiksCube.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RubiksCube";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F62F08C2C1CA1EE001AD674 /* Build configuration list for PBXProject "RubiksCube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F62F0B32C1CA1F0001AD674 /* Debug */,
+				9F62F0B42C1CA1F0001AD674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F62F0B52C1CA1F0001AD674 /* Build configuration list for PBXNativeTarget "RubiksCube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F62F0B62C1CA1F0001AD674 /* Debug */,
+				9F62F0B72C1CA1F0001AD674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F62F0B82C1CA1F0001AD674 /* Build configuration list for PBXNativeTarget "RubiksCubeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F62F0B92C1CA1F0001AD674 /* Debug */,
+				9F62F0BA2C1CA1F0001AD674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F62F0892C1CA1EE001AD674 /* Project object */;
+}
