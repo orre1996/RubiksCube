@@ -227,17 +227,17 @@ class RubiksCubeViewModel {
 
         // Set new states
         for i in 0..<3 {
-            cube[.front]?[2][i] = rightFace[i]
-            cube[.left]?[2][i] = frontFace[i]
-            cube[.back]?[2][i] = leftFace[i]
-            cube[.right]?[2][i] = backFace[i]
+            cube[.front]?[2][i] = leftFace[i]
+            cube[.left]?[2][i] = backFace[i]
+            cube[.back]?[2][i] = rightFace[i]
+            cube[.right]?[2][i] = frontFace[i]
         }
     }
 
     private func rotateBottomFaceCounterClockwise() {
         // Rotate the bottom face itself
         cube[.bottom] = cube[.bottom]?.rotate2DArray(clockwise: false)
-
+        
         // Store current state
         let frontFace = (0..<3).map({ i in cube[.front]?[2][i] ?? .white })
         let rightFace = (0..<3).map({ i in cube[.right]?[2][i] ?? .white })
@@ -246,10 +246,10 @@ class RubiksCubeViewModel {
 
         // Set new states
         for i in 0..<3 {
-            cube[.front]?[2][i] = leftFace[i]
-            cube[.left]?[2][i] = backFace[i]
-            cube[.back]?[2][i] = rightFace[i]
-            cube[.right]?[2][i] = frontFace[i]
+            cube[.front]?[2][i] = rightFace[i]
+            cube[.left]?[2][i] = frontFace[i]
+            cube[.back]?[2][i] = leftFace[i]
+            cube[.right]?[2][i] = backFace[i]
         }
     }
 
@@ -303,17 +303,17 @@ class RubiksCubeViewModel {
 
         // Set new states
         for i in 0..<3 {
-            cube[.top]?[0][i] = leftFace[i]
-            cube[.right]?[i][2] = topFace[i]
-            cube[.bottom]?[2][i] = rightFace[i]
-            cube[.left]?[i][0] = bottomFace[i]
+            cube[.top]?[0][i] = rightFace[i]
+            cube[.right]?[i][2] = bottomFace[i]
+            cube[.bottom]?[2][i] = leftFace[i]
+            cube[.left]?[i][0] = topFace[i]
         }
     }
 
     private func rotateBackFaceCounterClockwise() {
         // Rotate the back face itself
         cube[.back] = cube[.back]?.rotate2DArray(clockwise: false)
-
+        
         // Store current state
         let bottomFace = (0..<3).map({ i in cube[.bottom]?[2][i] ?? .white })
         let rightFace = (0..<3).map({ i in cube[.right]?[i][2] ?? .white })
@@ -322,10 +322,10 @@ class RubiksCubeViewModel {
 
         // Set new states
         for i in 0..<3 {
-            cube[.top]?[0][i] = rightFace[i]
-            cube[.right]?[i][2] = bottomFace[i]
-            cube[.bottom]?[2][i] = leftFace[i]
-            cube[.left]?[i][0] = topFace[i]
+            cube[.top]?[0][i] = leftFace[i]
+            cube[.right]?[i][2] = topFace[i]
+            cube[.bottom]?[2][i] = rightFace[i]
+            cube[.left]?[i][0] = bottomFace[i]
         }
     }
 }
