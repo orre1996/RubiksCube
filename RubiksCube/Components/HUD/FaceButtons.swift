@@ -20,9 +20,9 @@ struct FaceButtons: View {
 
     var body: some View {
         LazyVGrid(columns: columns, spacing: 16) {
-            ForEach(CubeFace.titles, id: \.self) { title in
-                if let currentFace = CubeFace(rawValue: title.lowercased()) {
-                    ToggleButton(title: currentFace.rawValue.capitalized,
+            ForEach(0..<(CubeFace.titles.count), id: \.self) { index in
+                if let currentFace = CubeFace(rawValue: index) {
+                    ToggleButton(title: currentFace.title.capitalized,
                                  isSelected: selectedFace == currentFace,
                                  action: {
                         selectedFace = currentFace

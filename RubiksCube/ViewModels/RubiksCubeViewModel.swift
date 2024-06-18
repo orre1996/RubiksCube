@@ -21,34 +21,44 @@ class RubiksCubeViewModel {
     }
 
     func resetCube() {
-        cube[.front] = Array(repeating: Array(repeating: .red, count: 3), count: 3)
-        cube[.back] = Array(repeating: Array(repeating: .orange, count: 3), count: 3)
-        cube[.left] = Array(repeating: Array(repeating: .blue, count: 3), count: 3)
-        cube[.right] = Array(repeating: Array(repeating: .green, count: 3), count: 3)
-        cube[.top] = Array(repeating: Array(repeating: .white, count: 3), count: 3)
-        cube[.bottom] = Array(repeating: Array(repeating: .yellow, count: 3), count: 3)
+        for i in 0..<6 {
+            guard let face = CubeFace(rawValue: i), let color = TileColor(rawValue: i) else {
+                fatalError("Couldn't find CubeFace at index \(i)")
+            }
+
+            guard let color = TileColor(rawValue: i) else {
+                fatalError("Couldn't find TileColor at index \(i)")
+            }
+
+            cube[face] = Array(repeating: Array(repeating: color, count: 3), count: 3)
+        }
     }
 
     func shuffleCube() {
         resetCube()
 
-        var colors = [TileColor]()
-        colors.append(contentsOf: Array(repeating: TileColor.red, count: 9))
-        colors.append(contentsOf: Array(repeating: TileColor.orange, count: 9))
-        colors.append(contentsOf: Array(repeating: TileColor.blue, count: 9))
-        colors.append(contentsOf: Array(repeating: TileColor.green, count: 9))
-        colors.append(contentsOf: Array(repeating: TileColor.white, count: 9))
-        colors.append(contentsOf: Array(repeating: TileColor.yellow, count: 9))
-        colors.shuffle()
+        for _ in 0..<20 {
+            let number = Int.random(in: 0..<100)
+            let clockwise = Int.random(in: 0..<2).isMultiple(of: 2)
 
-        for i in 0..<3 {
-            for j in 0..<3 {
-                cube[.front]?[i][j] = colors.removeLast()
-                cube[.back]?[i][j] = colors.removeLast()
-                cube[.left]?[i][j] = colors.removeLast()
-                cube[.right]?[i][j] = colors.removeLast()
-                cube[.top]?[i][j] = colors.removeLast()
-                cube[.bottom]?[i][j] = colors.removeLast()
+            switch number % 6 {
+                case 5:
+                    rotateFrontFace(clockwise: clockwise)
+
+                case 4:
+                    rotateBackFace(clockwise: clockwise)
+
+                case 3:
+                    rotateLeftFace(clockwise: clockwise)
+
+                case 2:
+                    rotateRightFace(clockwise: clockwise)
+
+                case 1:
+                    rotateTopFace(clockwise: clockwise)
+
+                default:
+                    rotateBottomFace(clockwise: clockwise)
             }
         }
     }

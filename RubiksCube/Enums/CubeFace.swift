@@ -7,20 +7,42 @@
 
 import Foundation
 
-enum CubeFace: String {
-    case top
-    case bottom
+enum CubeFace: Int {
+    case front = 0
+    case back
     case left
     case right
-    case front
-    case back
+    case top
+    case bottom
+    
+    var title: String {
+        switch self {
+            case .front:
+                "Front"
+
+            case .back:
+                "Back"
+
+            case .left:
+                "Left"
+
+            case .right:
+                "Right"
+
+            case .top:
+                "Top"
+
+            case .bottom:
+                "Bottom"
+        }
+    }
 
     static var titles: [String] {
-        return [CubeFace.top.rawValue.capitalized,
-                CubeFace.bottom.rawValue.capitalized,
-                CubeFace.left.rawValue.capitalized,
-                CubeFace.right.rawValue.capitalized,
-                CubeFace.front.rawValue.capitalized,
-                CubeFace.back.rawValue.capitalized]
+        return [CubeFace.top.title.capitalized,
+                CubeFace.bottom.title.capitalized,
+                CubeFace.left.title.capitalized,
+                CubeFace.right.title.capitalized,
+                CubeFace.front.title.capitalized,
+                CubeFace.back.title.capitalized]
     }
 }

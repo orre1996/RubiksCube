@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum TileColor {
-    case white
+enum TileColor: Int {
+    case red = 0
     case orange
-    case green
-    case red
     case blue
+    case green
+    case white
     case yellow
 
     var color: Color {
