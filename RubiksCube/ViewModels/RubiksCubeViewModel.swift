@@ -23,11 +23,11 @@ class RubiksCubeViewModel {
     func resetCube() {
         for i in 0..<6 {
             guard let face = CubeFace(rawValue: i) else {
-                fatalError("Couldn't find CubeFace at index \(i)")
+                fatalError("Couldn't find CubeFace with rawValue \(i)")
             }
 
             guard let color = TileColor(rawValue: i) else {
-                fatalError("Couldn't find TileColor at index \(i)")
+                fatalError("Couldn't find TileColor with rawValue \(i)")
             }
 
             cube[face] = Array(repeating: Array(repeating: color, count: 3), count: 3)
@@ -92,17 +92,17 @@ class RubiksCubeViewModel {
         cube[.right] = cube[.right]?.rotate2DArray(clockwise: clockwise)
 
         // Store current state
-        let frontFace = (0..<3).map({ i in getTile(for: .front, row: i, column: 2) })
-        let bottomFace = (0..<3).map({ i in getTile(for: .bottom, row: i, column: 2) })
-        let topFace = (0..<3).map({ i in getTile(for: .top, row: i, column: 2) })
-        let backFace = (0..<3).map({ i in getTile(for: .back, row: i, column: 2) })
+        let frontFace = (0..<3).map({ getTile(for: .front, row: $0, column: 2) })
+        let bottomFace = (0..<3).map({ getTile(for: .bottom, row: $0, column: 2) })
+        let topFace = (0..<3).map({ getTile(for: .top, row: $0, column: 2) })
+        let backFace = (0..<3).map({ getTile(for: .back, row: $0, column: 0) })
 
         // Set new states
         for i in 0..<3 {
             cube[.front]?[i][2] = clockwise ? bottomFace[i] : topFace[i]
-            cube[.top]?[i][2] = clockwise ? frontFace[i] : backFace[i]
-            cube[.back]?[i][2] = clockwise ? topFace[i] : bottomFace[i]
-            cube[.bottom]?[i][2] = clockwise ? backFace[i] : frontFace[i]
+            cube[.top]?[i][2] = clockwise ? frontFace[i] : backFace.reversed()[i]
+            cube[.back]?[i][0] = clockwise ? topFace.reversed()[i] : bottomFace.reversed()[i]
+            cube[.bottom]?[i][2] = clockwise ? backFace.reversed()[i] : frontFace[i]
         }
     }
 
@@ -111,17 +111,17 @@ class RubiksCubeViewModel {
         cube[.left] = cube[.left]?.rotate2DArray(clockwise: clockwise)
 
         // Store current state
-        let frontFace = (0..<3).map({ i in getTile(for: .front, row: i, column: 0) })
-        let bottomFace = (0..<3).map({ i in getTile(for: .bottom, row: i, column: 0) })
-        let topFace = (0..<3).map({ i in getTile(for: .top, row: i, column: 0) })
-        let backFace = (0..<3).map({ i in getTile(for: .back, row: i, column: 0) })
+        let frontFace = (0..<3).map({ getTile(for: .front, row: $0, column: 0) })
+        let bottomFace = (0..<3).map({ getTile(for: .bottom, row: $0, column: 0) })
+        let topFace = (0..<3).map({ getTile(for: .top, row: $0, column: 0) })
+        let backFace = (0..<3).map({ getTile(for: .back, row: $0, column: 2) })
 
         // Set new states
         for i in 0..<3 {
             cube[.front]?[i][0] = clockwise ? topFace[i] : bottomFace[i]
-            cube[.top]?[i][0] = clockwise ? backFace[i] : frontFace[i]
-            cube[.back]?[i][0] = clockwise ? bottomFace[i] : topFace[i]
-            cube[.bottom]?[i][0] = clockwise ? frontFace[i] : backFace[i]
+            cube[.top]?[i][0] = clockwise ? backFace.reversed()[i] : frontFace[i]
+            cube[.bottom]?[i][0] = clockwise ? frontFace[i] : backFace.reversed()[i]
+            cube[.back]?[i][2] = clockwise ? bottomFace.reversed()[i] : topFace.reversed()[i]
         }
     }
 
@@ -130,10 +130,10 @@ class RubiksCubeViewModel {
         cube[.top] = cube[.top]?.rotate2DArray(clockwise: clockwise)
 
         // Store current state
-        let frontFace = (0..<3).map({ i in getTile(for: .front, row: 0, column: i) })
-        let rightFace = (0..<3).map({ i in getTile(for: .right, row: 0, column: i) })
-        let backFace = (0..<3).map({ i in getTile(for: .back, row: 0, column: i) })
-        let leftFace = (0..<3).map({ i in getTile(for: .left, row: 0, column: i) })
+        let frontFace = (0..<3).map({ getTile(for: .front, row: 0, column: $0) })
+        let rightFace = (0..<3).map({ getTile(for: .right, row: 0, column: $0) })
+        let backFace = (0..<3).map({ getTile(for: .back, row: 0, column: $0) })
+        let leftFace = (0..<3).map({ getTile(for: .left, row: 0, column: $0) })
 
         // Set new states
         for i in 0..<3 {
@@ -149,10 +149,10 @@ class RubiksCubeViewModel {
         cube[.bottom] = cube[.bottom]?.rotate2DArray(clockwise: clockwise)
 
         // Store current state
-        let frontFace = (0..<3).map({ i in getTile(for: .front, row: 2, column: i) })
-        let rightFace = (0..<3).map({ i in getTile(for: .right, row: 2, column: i) })
-        let backFace = (0..<3).map({ i in getTile(for: .back, row: 2, column: i) })
-        let leftFace = (0..<3).map({ i in getTile(for: .left, row: 2, column: i) })
+        let frontFace = (0..<3).map({ getTile(for: .front, row: 2, column: $0) })
+        let rightFace = (0..<3).map({ getTile(for: .right, row: 2, column: $0) })
+        let backFace = (0..<3).map({ getTile(for: .back, row: 2, column: $0) })
+        let leftFace = (0..<3).map({ getTile(for: .left, row: 2, column: $0) })
 
         // Set new states
         for i in 0..<3 {
@@ -168,10 +168,10 @@ class RubiksCubeViewModel {
         cube[.front] = cube[.front]?.rotate2DArray(clockwise: clockwise)
 
         // Store current state
-        let bottomFace = (0..<3).map({ i in getTile(for: .bottom, row: 0, column: i) })
-        let rightFace = (0..<3).map({ i in getTile(for: .right, row: i, column: 0) })
-        let topFace = (0..<3).map({ i in getTile(for: .top, row: 2, column: i) })
-        let leftFace = (0..<3).map({ i in getTile(for: .left, row: i, column: 2) })
+        let bottomFace = (0..<3).map({ getTile(for: .bottom, row: 0, column: $0) })
+        let rightFace = (0..<3).map({ getTile(for: .right, row: $0, column: 0) })
+        let topFace = (0..<3).map({ getTile(for: .top, row: 2, column: $0) })
+        let leftFace = (0..<3).map({ getTile(for: .left, row: $0, column: 2) })
 
         // Set new states
         for i in 0..<3 {
@@ -187,17 +187,17 @@ class RubiksCubeViewModel {
         cube[.back] = cube[.back]?.rotate2DArray(clockwise: clockwise)
 
         // Store current state
-        let bottomFace = (0..<3).map({ i in getTile(for: .bottom, row: 2, column: i) })
-        let rightFace = (0..<3).map({ i in getTile(for: .right, row: i, column: 2) })
-        let topFace = (0..<3).map({ i in getTile(for: .top, row: 0, column: i) })
-        let leftFace = (0..<3).map({ i in getTile(for: .left, row: i, column: 0) })
+        let bottomFace = (0..<3).map({ getTile(for: .bottom, row: 2, column: $0) })
+        let rightFace = (0..<3).map({ getTile(for: .right, row: $0, column: 2) })
+        let topFace = (0..<3).map({ getTile(for: .top, row: 0, column: $0) })
+        let leftFace = (0..<3).map({ getTile(for: .left, row: $0, column: 0) })
 
         // Set new states
         for i in 0..<3 {
-            cube[.top]?[0][i] = clockwise ? rightFace[i] : leftFace[i]
-            cube[.right]?[i][2] = clockwise ? bottomFace[i] : topFace[i]
-            cube[.bottom]?[2][i] = clockwise ? leftFace[i] : rightFace[i]
-            cube[.left]?[i][0] = clockwise ? topFace[i] : bottomFace[i]
+            cube[.top]?[0][i] = clockwise ? rightFace[i] : leftFace.reversed()[i]
+            cube[.right]?[i][2] = clockwise ? bottomFace.reversed()[i] : topFace[i]
+            cube[.bottom]?[2][i] = clockwise ? leftFace[i] : rightFace.reversed()[i]
+            cube[.left]?[i][0] = clockwise ? topFace.reversed()[i] : bottomFace[i]
         }
     }
 
