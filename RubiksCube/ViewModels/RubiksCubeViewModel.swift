@@ -203,7 +203,7 @@ class RubiksCubeViewModel {
 
     private func getTile(for face: CubeFace, row: Int, column: Int) -> TileColor {
         guard let color = cube[face]?[safely: row]?[safely: column] else {
-            fatalError("Couldn't find color for face \(face), row \(row) and column \(column)")
+            fatalError("Couldn't find color for \(face) face, row \(row) and column \(column)")
         }
 
         return color

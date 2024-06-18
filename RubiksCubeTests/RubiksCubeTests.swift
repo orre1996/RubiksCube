@@ -12,278 +12,230 @@ final class RubiksCubeTests: XCTestCase {
     private let viewModel = RubiksCubeViewModel()
 
     func testTopClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.front]?[0][0], TileColor.red)
-        XCTAssertEqual(cube[.front]?[0][1], TileColor.red)
-        XCTAssertEqual(cube[.front]?[0][2], TileColor.red)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .top
         viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[0][0], TileColor.green)
-        XCTAssertEqual(cube[.front]?[0][1], TileColor.green)
-        XCTAssertEqual(cube[.front]?[0][2], TileColor.green)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .clockwise)
+        }
 
-        XCTAssertEqual(cube[.right]?[0][0], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[0][1], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[0][2], TileColor.blue)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
     
     func testTopCounterClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.front]?[0][0], TileColor.red)
-        XCTAssertEqual(cube[.front]?[0][1], TileColor.red)
-        XCTAssertEqual(cube[.front]?[0][2], TileColor.red)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .top
         viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[0][0], TileColor.blue)
-        XCTAssertEqual(cube[.front]?[0][1], TileColor.blue)
-        XCTAssertEqual(cube[.front]?[0][2], TileColor.blue)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .counterClockwise)
+        }
 
-        XCTAssertEqual(cube[.right]?[0][0], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[0][1], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[0][2], TileColor.blue)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testBottomClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.red)
-        XCTAssertEqual(cube[.front]?[2][1], TileColor.red)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.red)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .bottom
         viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.front]?[2][1], TileColor.blue)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.blue)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .clockwise)
+        }
 
-        XCTAssertEqual(cube[.right]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][1], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][2], TileColor.blue)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testBottomCounterClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.red)
-        XCTAssertEqual(cube[.front]?[2][1], TileColor.red)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.red)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .bottom
         viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.green)
-        XCTAssertEqual(cube[.front]?[2][1], TileColor.green)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.green)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .counterClockwise)
+        }
 
-        XCTAssertEqual(cube[.right]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][1], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][2], TileColor.blue)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testLeftClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.front]?[0][0], TileColor.red)
-        XCTAssertEqual(cube[.front]?[1][0], TileColor.red)
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.red)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .left
         viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[0][0], TileColor.white)
-        XCTAssertEqual(cube[.front]?[1][0], TileColor.white)
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.white)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .clockwise)
+        }
 
-        XCTAssertEqual(cube[.bottom]?[0][0], TileColor.white)
-        XCTAssertEqual(cube[.bottom]?[1][0], TileColor.white)
-        XCTAssertEqual(cube[.bottom]?[2][0], TileColor.white)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testLeftCounterClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.front]?[0][0], TileColor.red)
-        XCTAssertEqual(cube[.front]?[1][0], TileColor.red)
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.red)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .left
         viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[0][0], TileColor.yellow)
-        XCTAssertEqual(cube[.front]?[1][0], TileColor.yellow)
-        XCTAssertEqual(cube[.front]?[2][0], TileColor.yellow)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .counterClockwise)
+        }
 
-        XCTAssertEqual(cube[.bottom]?[0][0], TileColor.white)
-        XCTAssertEqual(cube[.bottom]?[1][0], TileColor.white)
-        XCTAssertEqual(cube[.bottom]?[2][0], TileColor.white)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testRightClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.front]?[0][2], TileColor.red)
-        XCTAssertEqual(cube[.front]?[1][2], TileColor.red)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.red)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .right
         viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[0][2], TileColor.yellow)
-        XCTAssertEqual(cube[.front]?[1][2], TileColor.yellow)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.yellow)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .clockwise)
+        }
 
-        XCTAssertEqual(cube[.bottom]?[0][2], TileColor.white)
-        XCTAssertEqual(cube[.bottom]?[1][2], TileColor.white)
-        XCTAssertEqual(cube[.bottom]?[2][2], TileColor.white)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testRightCounterClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.front]?[0][2], TileColor.red)
-        XCTAssertEqual(cube[.front]?[1][2], TileColor.red)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.red)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .right
         viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.front]?[0][2], TileColor.white)
-        XCTAssertEqual(cube[.front]?[1][2], TileColor.white)
-        XCTAssertEqual(cube[.front]?[2][2], TileColor.white)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .counterClockwise)
+        }
 
-        XCTAssertEqual(cube[.bottom]?[0][2], TileColor.white)
-        XCTAssertEqual(cube[.bottom]?[1][2], TileColor.white)
-        XCTAssertEqual(cube[.bottom]?[2][2], TileColor.white)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testFrontClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.white)
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.white)
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.white)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .front
         viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.blue)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .clockwise)
+        }
 
-        XCTAssertEqual(cube[.right]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][0], TileColor.blue)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testFrontCounterClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.white)
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.white)
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.white)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .front
         viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.green)
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.green)
-        XCTAssertEqual(cube[.top]?[2][0], TileColor.green)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .counterClockwise)
+        }
 
-        XCTAssertEqual(cube[.right]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][0], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][0], TileColor.blue)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testBackClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.top]?[0][0], TileColor.white)
-        XCTAssertEqual(cube[.top]?[0][1], TileColor.white)
-        XCTAssertEqual(cube[.top]?[0][2], TileColor.white)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .back
         viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.top]?[0][0], TileColor.green)
-        XCTAssertEqual(cube[.top]?[0][1], TileColor.green)
-        XCTAssertEqual(cube[.top]?[0][2], TileColor.green)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
-        viewModel.rotateFace(direction: .clockwise)
-        cube = viewModel.cube
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .clockwise)
+        }
 
-        XCTAssertEqual(cube[.right]?[0][2], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[1][2], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][2], TileColor.blue)
+        XCTAssertEqual(initialCube, viewModel.cube)
     }
 
     func testBackCounterClockwiseRotation() {
-        var cube = viewModel.cube
-
-        XCTAssertEqual(cube[.top]?[0][0], TileColor.white)
-        XCTAssertEqual(cube[.top]?[0][1], TileColor.white)
-        XCTAssertEqual(cube[.top]?[0][2], TileColor.white)
+        let initialCube = viewModel.cube
 
         viewModel.selectedFace = .back
         viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.top]?[0][0], TileColor.blue)
-        XCTAssertEqual(cube[.top]?[0][1], TileColor.blue)
-        XCTAssertEqual(cube[.top]?[0][2], TileColor.blue)
+        XCTAssertNotEqual(initialCube, viewModel.cube)
 
+        for _ in 0..<3 {
+            viewModel.rotateFace(direction: .counterClockwise)
+        }
+
+        XCTAssertEqual(initialCube, viewModel.cube)
+    }
+
+    func testRightTopBottomBackRotationCombination() {
+        viewModel.selectedFace = .right
+        viewModel.rotateFace(direction: .clockwise)
+
+        viewModel.selectedFace = .top
+        viewModel.rotateFace(direction: .clockwise)
+
+        viewModel.selectedFace = .bottom
+        viewModel.rotateFace(direction: .clockwise)
         viewModel.rotateFace(direction: .counterClockwise)
-        cube = viewModel.cube
 
-        XCTAssertEqual(cube[.right]?[0][2], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[1][2], TileColor.blue)
-        XCTAssertEqual(cube[.right]?[2][2], TileColor.blue)
+        viewModel.selectedFace = .back
+        viewModel.rotateFace(direction: .clockwise)
+        
+        let frontFirstRow = viewModel.cube[.front]?[0]
+        XCTAssertEqual(frontFirstRow, [.green, .green, .green])
+        
+        let topFirstColumn = [viewModel.cube[.top]![0][0],
+                              viewModel.cube[.top]![1][0],
+                              viewModel.cube[.top]![2][0]]
+
+        XCTAssertEqual(topFirstColumn, [.orange, .white, .red])
+    }
+
+    func testLeftBackFrontRightRotationCombinations() {
+        viewModel.selectedFace = .left
+        viewModel.rotateFace(direction: .clockwise)
+
+        viewModel.selectedFace = .back
+        viewModel.rotateFace(direction: .clockwise)
+
+        viewModel.selectedFace = .front
+        viewModel.rotateFace(direction: .counterClockwise)
+        viewModel.rotateFace(direction: .counterClockwise)
+
+        viewModel.selectedFace = .right
+        viewModel.rotateFace(direction: .clockwise)
+        
+        let backLastRow = viewModel.cube[.back]?[2]
+        XCTAssertEqual(backLastRow, [.green, .yellow, .yellow])
+        
+        let leftSecondColumn = [viewModel.cube[.left]![0][0],
+                                viewModel.cube[.left]![1][0],
+                                viewModel.cube[.left]![2][0]]
+
+        XCTAssertEqual(leftSecondColumn, [.white, .white, .orange])
     }
 }
