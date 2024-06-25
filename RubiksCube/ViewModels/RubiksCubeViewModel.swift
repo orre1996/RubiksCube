@@ -41,24 +41,24 @@ class RubiksCubeViewModel {
             let faceNumber = Int.random(in: 0..<6)
             let clockwise = Int.random(in: 0..<2).isMultiple(of: 2)
 
-            guard let selectedFace = CubeFace(rawValue: faceNumber) else { return }
+            guard let selectedFace = CubeFace(rawValue: faceNumber % 6) else { return }
 
             cube[selectedFace] = cube[selectedFace]?.rotate2DArray(clockwise: clockwise)
 
-            switch faceNumber % 6 {
-                case CubeFace.bottom.rawValue:
+            switch selectedFace {
+                case .bottom:
                     rotateBottomFace(clockwise: clockwise)
 
-                case CubeFace.top.rawValue:
+                case .top:
                     rotateTopFace(clockwise: clockwise)
 
-                case CubeFace.right.rawValue:
+                case .right:
                     rotateRightFace(clockwise: clockwise)
 
-                case CubeFace.left.rawValue:
+                case .left:
                     rotateLeftFace(clockwise: clockwise)
 
-                case CubeFace.back.rawValue:
+                case .back:
                     rotateBackFace(clockwise: clockwise)
 
                 default:
