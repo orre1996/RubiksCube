@@ -38,33 +38,40 @@ class RubiksCubeViewModel {
         resetCube()
 
         for _ in 0..<20 {
-            let number = Int.random(in: 0..<6)
+            let faceNumber = Int.random(in: 0..<6)
             let clockwise = Int.random(in: 0..<2).isMultiple(of: 2)
 
-            switch number % 6 {
-                case 5:
-                    rotateFrontFace(clockwise: clockwise)
+            guard let selectedFace = CubeFace(rawValue: faceNumber) else { return }
 
-                case 4:
-                    rotateBackFace(clockwise: clockwise)
+            cube[selectedFace] = cube[selectedFace]?.rotate2DArray(clockwise: clockwise)
 
-                case 3:
-                    rotateLeftFace(clockwise: clockwise)
+            switch faceNumber % 6 {
+                case CubeFace.bottom.rawValue:
+                    rotateBottomFace(clockwise: clockwise)
 
-                case 2:
-                    rotateRightFace(clockwise: clockwise)
-
-                case 1:
+                case CubeFace.top.rawValue:
                     rotateTopFace(clockwise: clockwise)
 
+                case CubeFace.right.rawValue:
+                    rotateRightFace(clockwise: clockwise)
+
+                case CubeFace.left.rawValue:
+                    rotateLeftFace(clockwise: clockwise)
+
+                case CubeFace.back.rawValue:
+                    rotateBackFace(clockwise: clockwise)
+
                 default:
-                    rotateBottomFace(clockwise: clockwise)
+                    rotateFrontFace(clockwise: clockwise)
             }
         }
     }
 
     func rotateFace(direction: CubeRotation) {
         guard let selectedFace = selectedFace else { return }
+        
+        // Rotate the selected face itself
+        cube[selectedFace] = cube[selectedFace]?.rotate2DArray(clockwise: direction == .clockwise)
 
         switch selectedFace {
             case .top:
@@ -88,9 +95,6 @@ class RubiksCubeViewModel {
     }
 
     private func rotateRightFace(clockwise: Bool) {
-        // Rotate the right face itself
-        cube[.right] = cube[.right]?.rotate2DArray(clockwise: clockwise)
-
         // Store current state
         let frontFace = (0..<3).map({ getTile(for: .front, row: $0, column: 2) })
         let bottomFace = (0..<3).map({ getTile(for: .bottom, row: $0, column: 2) })
@@ -107,9 +111,6 @@ class RubiksCubeViewModel {
     }
 
     private func rotateLeftFace(clockwise: Bool) {
-        // Rotate the left face itself
-        cube[.left] = cube[.left]?.rotate2DArray(clockwise: clockwise)
-
         // Store current state
         let frontFace = (0..<3).map({ getTile(for: .front, row: $0, column: 0) })
         let bottomFace = (0..<3).map({ getTile(for: .bottom, row: $0, column: 0) })
@@ -126,9 +127,6 @@ class RubiksCubeViewModel {
     }
 
     private func rotateTopFace(clockwise: Bool) {
-        // Rotate the top face itself
-        cube[.top] = cube[.top]?.rotate2DArray(clockwise: clockwise)
-
         // Store current state
         let frontFace = (0..<3).map({ getTile(for: .front, row: 0, column: $0) })
         let rightFace = (0..<3).map({ getTile(for: .right, row: 0, column: $0) })
@@ -145,9 +143,6 @@ class RubiksCubeViewModel {
     }
 
     private func rotateBottomFace(clockwise: Bool) {
-        // Rotate the bottom face itself
-        cube[.bottom] = cube[.bottom]?.rotate2DArray(clockwise: clockwise)
-
         // Store current state
         let frontFace = (0..<3).map({ getTile(for: .front, row: 2, column: $0) })
         let rightFace = (0..<3).map({ getTile(for: .right, row: 2, column: $0) })
@@ -164,9 +159,6 @@ class RubiksCubeViewModel {
     }
 
     private func rotateFrontFace(clockwise: Bool) {
-        // Rotate the front face itself
-        cube[.front] = cube[.front]?.rotate2DArray(clockwise: clockwise)
-
         // Store current state
         let bottomFace = (0..<3).map({ getTile(for: .bottom, row: 0, column: $0) })
         let rightFace = (0..<3).map({ getTile(for: .right, row: $0, column: 0) })
@@ -183,9 +175,6 @@ class RubiksCubeViewModel {
     }
 
     private func rotateBackFace(clockwise: Bool) {
-        // Rotate the front face itself
-        cube[.back] = cube[.back]?.rotate2DArray(clockwise: clockwise)
-
         // Store current state
         let bottomFace = (0..<3).map({ getTile(for: .bottom, row: 2, column: $0) })
         let rightFace = (0..<3).map({ getTile(for: .right, row: $0, column: 2) })
