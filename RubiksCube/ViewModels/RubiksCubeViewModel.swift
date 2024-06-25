@@ -38,10 +38,10 @@ class RubiksCubeViewModel {
         resetCube()
 
         for _ in 0..<20 {
-            let faceNumber = Int.random(in: 0..<6)
+            let faceNumber = Int.random(in: 0..<6) % 6
             let clockwise = Int.random(in: 0..<2).isMultiple(of: 2)
 
-            guard let selectedFace = CubeFace(rawValue: faceNumber % 6) else { return }
+            guard let selectedFace = CubeFace(rawValue: faceNumber) else { return }
 
             cube[selectedFace] = cube[selectedFace]?.rotate2DArray(clockwise: clockwise)
 
